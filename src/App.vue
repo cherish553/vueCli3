@@ -1,12 +1,26 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <button @click="jump('demo1')">demo1</button> |
+      <button @click="jump('demo2')">demo2</button>
     </div>
     <router-view/>
   </div>
 </template>
+<script>
+export default {
+  data(){
+    return{
+
+    }
+  },
+  methods:{
+    jump(name){
+      this.$router.push({name})
+    }
+  }
+}
+</script>
 
 <style lang="less">
 #app {

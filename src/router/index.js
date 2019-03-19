@@ -18,7 +18,7 @@ router.beforeEach((to, from, next) => {
     }
     //如果用户要跳转的页面不存在,那么重新定位回首页或者自己配置404页面
     if (to.name === null) {
-        next({ name: 'home' })
+        next({ name: 'demo1' })
         return
     }
     //auth进行权限判断
@@ -28,7 +28,7 @@ router.beforeEach((to, from, next) => {
             next()
         else {
             next({
-                name: 'home',
+                name: 'demo1',
                 query: {
                     redirect: to.name
                 }

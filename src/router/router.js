@@ -1,13 +1,13 @@
 
-import Home from '@/views/Home.vue'
-import about from './modules/about.js'
+import demo1 from '@/page/demo1/index.vue'
+import demo2 from './modules/demo2'
 
 let router = [
     {
         path: '/',
-        name: 'home',
-        component: Home
+        name: 'demo1',
+        component: demo1
     },
-    about
+    demo2
 ]
 export default router

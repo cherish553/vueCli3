@@ -1,7 +1,7 @@
 <template>
-  <div class="about">
+  <div class="demo2">
     <h1>This is an about page</h1>
-    <button @click="jump">来呀点我</button>
+    <button @click="jump">点击我跳转子路由</button>
     <router-view></router-view>
   </div>
 </template>
@@ -15,7 +15,7 @@ export default {
   },
   methods:{
     jump(){
-      this.$router.push({name:'about-demo'})
+      this.$router.push({name:'demo2-1'})
     }
   }
 }
