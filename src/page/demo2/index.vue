@@ -1,13 +1,21 @@
 <template>
   <div class="demo2">
-    <h1>This is an about page</h1>
-    <button @click="jump">点击我跳转子路由</button>
-    <router-view></router-view>
+    <h1>vuex用法</h1>
+    <child>
+      <template slot-scope="scope">
+        <div class="tmpl">
+          {{scope}}</span>
+        </div>
+      </template>
+    </child>
+
   </div>
 </template>
 
 <script>
+import child from'./children/childOne'
 export default {
+  components:{child},
   data(){
     return{
 

@@ -2,20 +2,22 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import routes from './router'
 import $ from '@/until/common'
-Vue.use(Router)
+// Vue.use(Router)
 
 const router = new Router({
     routes
 })
 
 router.beforeEach((to, from, next) => {
+    // console.log(to)
+    console.log(from)
     //如果用户之前进入了该页面,那么再次打开,依旧回到这个页面
-    if (from.name === null && $.getCookie('urlName')) {
-        let name = $.getCookie('urlName')
-        $.delCookie('urlName')
-        next({ name })
-        return
-    }
+    // if (from.name === null && $.getCookie('urlName')) {
+    //     let name = $.getCookie('urlName')
+    //     $.delCookie('urlName')
+    //     next({ name })
+    //     return
+    // }
     //如果用户要跳转的页面不存在,那么重新定位回首页或者自己配置404页面
     if (to.name === null) {
         next({ name: 'demo1' })

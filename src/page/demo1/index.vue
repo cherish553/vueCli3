@@ -1,5 +1,6 @@
 <template>
   <div class="demo1">
+    <h1>父子组件传值</h1>
     <img
       alt="Vue logo"
       src="@/assets/logo.png"

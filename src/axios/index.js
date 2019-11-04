@@ -1,19 +1,28 @@
 import axios from 'axios'
-const baseURL = 'https://dev2.yezhubao.net/cipms/'
+// const baseURL = 'localhost:5000'
 
 // 创建一个 axios 实例
 const service = axios.create({
-    baseURL,
     timeout: 5000 // 请求超时时间
 })
+// service.defaults.withCredentials = true
+
+// 请求拦截器
+service.interceptors.request.use(
+    config => {
+        config.headers = { 'Content-Type': 'application/Json' }
+        return config
+    },
+    error => Promise.reject(error)
+)
 
 // 处理header
-function getHeaders(url, json = '') {
-    let headers = {}
-    headers['Content-Type'] = 'application/json'
-    headers['token'] = '111111111111'
-    return headers
-}
+// function getHeaders(url, json = '') {
+//     let headers = {}
+//     headers['Content-Type'] = 'application/json'
+//     headers['token'] = '111111111111'
+//     return headers
+// }
 
 //提示错误信息
 function errorLog(error) {
@@ -28,16 +37,20 @@ function errorLog(error) {
 // 响应拦截器
 service.interceptors.response.use(
     response => {
-        const dataAxios = response.data
-        console.log(dataAxios)
-        const { code, errCode } = dataAxios
-        if (code && code !== 0) {
-            errorLog(dataAxios.message)
-        } else if (errCode && errCode !== 0) {
-            errorLog(dataAxios.errMsg)
-        } else {
-            return dataAxios
-        }
+        console.log(response)
+        // debuggers
+        console.log('%c 11111111111111111','color:red')
+        return response.data
+        
+        // console.log(dataAxios)
+        // const { code, errCode } = dataAxios
+        // if (code && code !== 0) {
+        //     errorLog(dataAxios.message)
+        // } else if (errCode && errCode !== 0) {
+        //     errorLog(dataAxios.errMsg)
+        // } else {
+        //     return dataAxios
+        // }
     },
     error => {
         if (error && error.response) {
@@ -60,38 +73,39 @@ service.interceptors.response.use(
         return Promise.reject(error)
     }
 )
-export const get = url => {
-    return service({
-        method: 'get',
-        url,
-        headers: getHeaders(url)
-    })
-}
+export const http=service
+// export const get = url => {
+//     return service({
+//         method: 'GET',
+//         url,
+//         headers: getHeaders(url)
+//     })
+// }
 
-export const post = (url, data = {}) => {
-    if (data && data.type !== String)
-        data = JSON.stringify(data)
-    return service({
-        method: 'post',
-        url,
-        data,
-        headers: getHeaders(url, data)
-    })
-}
-export const del = (url) => {
-    return service({
-        method: 'delete',
-        url,
-        headers: getHeaders(url)
-    })
-}
-export const put = (url, data = {}) => {
-    if (data && data.type !== String)
-        data = JSON.stringify(data)
-    return service({
-        method: 'put',
-        url,
-        data,
-        headers: getHeaders(url, data)
-    })
-}
+// export const post = (url, data = {}) => {
+//     if (data && data.type !== String)
+//         data = JSON.stringify(data)
+//     return service({
+//         method: 'post',
+//         url,
+//         data,
+//         headers: getHeaders(url, data)
+//     })
+// }
+// export const del = (url) => {
+//     return service({
+//         method: 'delete',
+//         url,
+//         headers: getHeaders(url)
+//     })
+// }
+// export const put = (url, data = {}) => {
+//     if (data && data.type !== String)
+//         data = JSON.stringify(data)
+//     return service({
+//         method: 'put',
+//         url,
+//         data,
+//         headers: getHeaders(url, data)
+//     })
+// }

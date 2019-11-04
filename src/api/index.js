@@ -1,5 +1,4 @@
-import { get, post, del, put } from '@/axios/index'
+import { http } from '@/axios/index'
 //获取公司列表
-export const getCompanyList = ({ page, size, name = '' }) => post(`admin/company/${page}/${size}`, {
-    name
-})
+export const getData = () => http.get(`/api`)
+export const getToken=_=>http.get(`/api/user/getQiniuToken`)
