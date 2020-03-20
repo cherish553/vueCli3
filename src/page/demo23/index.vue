@@ -1,11 +1,16 @@
 <template>
   <div class='height2000'>
-    <input type="text">
+    <input type="text" v-focus='123'>
   </div>
 </template>
 <script>
 export default {
-  name:'keep'
+  name:'keep',
+  methods:{
+    change(e){
+      console.log(123)
+    }
+  }
 }
 </script>
 <style>

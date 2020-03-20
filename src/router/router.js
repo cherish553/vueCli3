@@ -22,6 +22,7 @@ import demo20 from './modules/demo20'
 import demo21 from './modules/demo21'
 import demo22 from './modules/demo22'
 import demo23 from './modules/demo23'
+import demo24 from './modules/demo24'
 
 let router = [
     {
@@ -50,6 +51,7 @@ let router = [
     demo20,
     demo21,
     demo22,
-    demo23
+    demo23,
+    demo24
 ]
 export default router

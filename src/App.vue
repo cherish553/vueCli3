@@ -23,7 +23,8 @@
       <el-button size="small" type="warning" @click="jump('demo20')">demo20</el-button>|
       <el-button size="small" type="warning" @click="jump('demo21')">demo21</el-button>|
       <el-button size="small" type="warning" @click="jump('demo22')">demo22</el-button>|
-      <el-button size="small" type="warning" @click="jump('demo23')">demo23</el-button>
+      <el-button size="small" type="warning" @click="jump('demo23')">demo23</el-button>|
+      <el-button size="small" type="warning" @click="jump('demo24')">demo24</el-button>
     </div>
     <keep-alive>
       <router-view />

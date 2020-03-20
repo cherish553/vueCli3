@@ -13,7 +13,27 @@ import '@/page/demo16/eventBus'
 import ELEMENT from 'element-ui'
 // sync(store, router)
 Vue.use(ELEMENT)
-
+Vue.directive('focus', {
+  // 当被绑定的元素插入到 DOM 中时……
+  bind(e,i){
+    console.log('bind')
+    console.log(e)
+    console.log(i.value)
+    console.log(1111111111)
+  },
+  updated(){
+    console.log('updated')
+  },
+  unbind(){
+    console.log('unbind')
+  },
+  inserted(el) {
+    console.log(el.focus)
+    console.log(11111)
+    // 聚焦元素
+    el.focus()
+  }
+})
 // import echarts from 'echarts' //引入echarts
 // import "echarts/lib/component/title";
 // import "echarts/lib/component/title";

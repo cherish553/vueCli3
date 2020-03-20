@@ -38,7 +38,7 @@ export default {
   },
   mounted() {
     this.$bus.$on("nameOfEvent", $event => {
-      // console.log($event);
+      console.log(111111);
     });
   }
 };

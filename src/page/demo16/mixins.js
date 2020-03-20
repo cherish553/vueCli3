@@ -1,5 +1,5 @@
 export const mixins={
     destroyed() {
-        this.$bus.$off()   
+        // this.$bus.$off()   
     }
 }

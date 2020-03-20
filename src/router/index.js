@@ -10,7 +10,7 @@ const router = new Router({
 
 router.beforeEach((to, from, next) => {
     // console.log(to)
-    console.log(from)
+    // console.log(from)
     //如果用户之前进入了该页面,那么再次打开,依旧回到这个页面
     // if (from.name === null && $.getCookie('urlName')) {
     //     let name = $.getCookie('urlName')
